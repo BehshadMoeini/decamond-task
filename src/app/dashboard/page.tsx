@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Button from "../../components/Button/Button";
 import { getUserData, logout, type UserData } from "../../services/authService";
+import { displayPhoneNumber } from "../../utils/validation";
 import styles from "./page.module.scss";
 
 const DashboardPage = () => {
@@ -97,7 +98,9 @@ const DashboardPage = () => {
           </div>
           <div className={styles.detailItem}>
             <span>تلفن:</span>
-            <span>{userData.phone}</span>
+            <span style={{ direction: "ltr", unicodeBidi: "isolate" }}>
+              {displayPhoneNumber(userData.phone)}
+            </span>
           </div>
           <div className={styles.detailItem}>
             <span>موقعیت:</span>
