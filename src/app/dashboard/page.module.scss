@@ -1,0 +1,178 @@
+/* Container */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+/* Main Card */
+.card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header Section */
+.header {
+  background: #667eea;
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  direction: rtl;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  text-align: right;
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-height: 36px;
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.userName {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  direction: rtl;
+}
+
+/* Details Section */
+.details {
+  padding: 30px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+  direction: rtl;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span:first-child {
+    font-weight: 600;
+    color: #555;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  span:last-child {
+    color: #333;
+    text-align: left;
+    word-break: break-word;
+  }
+}
+
+/* Loading */
+.loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e9ecef;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+
+    gap: 15px;
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+    }
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .userName {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      button {
+        padding: 6px;
+        font-size: 13px;
+        height: 30px;
+        width: 40px;
+      }
+    }
+  }
+
+  .details {
+    padding: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .detailItem {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      padding: 10px 0;
+    }
+  }
+}
